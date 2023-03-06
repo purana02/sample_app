@@ -6,7 +6,7 @@ class ListsController < ApplicationController
   def create
     list = List.new(list_params)
     list.save
-    redirect_to list_psth(list.id)
+    redirect_to list_path(list.id)
   end
 
   def index
@@ -29,6 +29,6 @@ class ListsController < ApplicationController
   
   private
   def list_params
-    params.require(:list).permit(:title,:body)
+    params.require(:list).permit(:title,:body,:image)
   end
 end
